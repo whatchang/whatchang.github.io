@@ -191,7 +191,6 @@ collections:
 
 # Defaults
 defaults:
-'''
   # _posts
   - scope:
       path: ""
@@ -203,6 +202,7 @@ defaults:
       comments: true
       share: true
       related: true
+      '''
   # _pages
   - scope:
       path: ""
