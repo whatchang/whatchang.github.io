@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Woochang Sim"
-  avatar           : "profile.png"
+  avatar           : "./images/persong.jpeg"
   bio              : "Your biography for the left-hand sidebar"
   location         : "Location"
   employer         :
