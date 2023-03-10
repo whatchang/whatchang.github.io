@@ -7,9 +7,9 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Woochang Sim"
+title                    : "Woo-chang Sim"
 title_separator          : "-"
-name                     : &name "Woochang Sim"
+name                     : &name "Woo-chang Sim"
 description              : &description "personal description"
 url                      : https://whatchang.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Woochang Sim"
-  avatar           : "./images/persong.jpeg"
+  avatar           : "person.jpeg"
   bio              : "Your biography for the left-hand sidebar"
   location         : "Location"
   employer         :
