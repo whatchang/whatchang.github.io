@@ -1,0 +1,29 @@
+---
+import { education } from "../data/education";
+---
+
+{
+  education.length > 0 && (
+    <section id="education" class="mx-auto max-w-3xl px-6 py-16">
+      <h2 class="text-2xl font-semibold tracking-tight text-zinc-900 md:text-3xl dark:text-zinc-100">
+        Education
+      </h2>
+
+      <ul class="mt-6 space-y-4">
+        {education.map((item) => (
+          <li class="flex flex-col gap-0.5">
+            <span class="text-base font-medium text-zinc-900 dark:text-zinc-100">
+              {item.institution}
+            </span>
+            <span class="text-base text-zinc-700 dark:text-zinc-300">
+              {item.degree}
+            </span>
+            <span class="font-mono text-sm tabular-nums text-zinc-500 dark:text-zinc-400">
+              {item.period}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}

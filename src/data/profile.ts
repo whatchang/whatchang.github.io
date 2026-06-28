@@ -3,7 +3,7 @@ export const profile = {
   nameKo: "심우창",
   title: "Ph.D. Student, AI Convergence",
   affiliation: "Data Science Lab, Gwangju Institute of Science and Technology (GIST)",
-  advisor: { name: "Prof. Sundong Kim", href: "" },  // TODO add lab URL
+  advisor: { name: "Prof. Sundong Kim", href: "https://sundong.kim/" },
   email: "woochang@gm.gist.ac.kr",
   links: {
     scholar: "https://scholar.google.com/citations?user=vBmLpIUAAAAJ&hl=ko",

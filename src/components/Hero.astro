@@ -30,13 +30,13 @@ import { withBase } from "../lib/url";
         {profile.title}
       </p>
 
-      <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+      <p class="mt-2 text-base text-zinc-600 dark:text-zinc-400">
         {profile.affiliation}
       </p>
 
       {
         profile.advisor.name && (
-          <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+          <p class="mt-1 text-base text-zinc-600 dark:text-zinc-400">
             Advisor:{" "}
             {profile.advisor.href ? (
               <a
@@ -58,7 +58,7 @@ import { withBase } from "../lib/url";
 
       {
         profile.email && (
-          <p class="mt-1 text-sm">
+          <p class="mt-1 text-base">
             <a
               href={`mailto:${profile.email}`}
               class="text-indigo-600 hover:underline dark:text-indigo-400"

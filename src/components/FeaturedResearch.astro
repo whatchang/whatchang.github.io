@@ -6,7 +6,7 @@ import { withBase } from "../lib/url";
 
 <section id="featured" class="mx-auto max-w-3xl px-6 py-16">
   <h2
-    class="text-xl font-semibold tracking-tight text-zinc-900 md:text-2xl dark:text-zinc-100"
+    class="text-2xl font-semibold tracking-tight text-zinc-900 md:text-3xl dark:text-zinc-100"
   >
     Featured Research
   </h2>
@@ -14,7 +14,16 @@ import { withBase } from "../lib/url";
   <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
     {
       featured.map((item) => (
-        <article class="group overflow-hidden rounded-2xl border border-zinc-200 bg-white transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900/40 dark:hover:shadow-lg dark:hover:shadow-black/20">
+        <article class="relative group overflow-hidden rounded-2xl border border-zinc-200 bg-white transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900/40 dark:hover:shadow-lg dark:hover:shadow-black/20">
+          {item.href && (
+            <a
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="absolute inset-0 z-10"
+              aria-label={`Visit ${item.title} project site`}
+            />
+          )}
           <div class="aspect-video w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900">
             <img
               src={withBase(item.thumbnail)}
@@ -35,12 +44,12 @@ import { withBase } from "../lib/url";
               {item.title}
             </h3>
 
-            <p class="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+            <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
               {item.description}
             </p>
 
             {item.links.length > 0 && (
-              <div class="flex flex-wrap gap-2 pt-1">
+              <div class="relative z-20 flex flex-wrap gap-2 pt-1">
                 {item.links.map((link) => (
                   <LinkChip label={link.label} href={link.href} />
                 ))}

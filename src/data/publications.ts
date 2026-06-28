@@ -5,6 +5,8 @@ export type Publication = {
   year: number;
   type: "journal" | "conference" | "workshop" | "preprint";
   award?: string;
+  equalContribution?: boolean;
+  tags?: string[];
   links?: { pdf?: string; arxiv?: string; code?: string; project?: string };
   thumbnail?: string;
 };
@@ -35,8 +37,9 @@ export const publications: Publication[] = [
     venue: "ACM Transactions on Intelligent Systems and Technology (TIST)",
     year: 2024,
     type: "journal",
-    award: "co-first author",
-    links: {},
+    equalContribution: true,
+    tags: ["reasoning", "LLM", "evaluation", "ARC"],
+    links: { project: "https://llm-on-arc.pages.dev/" },
   },
   {
     title: "ARC 문제 해결을 위한 프롬프트 엔지니어링의 가능성",
@@ -44,6 +47,7 @@ export const publications: Publication[] = [
     venue: "정보과학회 컴퓨팅의 실제 논문지 30(2):63–69",
     year: 2024,
     type: "journal",
+    tags: ["reasoning", "prompt engineering", "ARC", "domestic journal"],
     links: {},
   },
 
@@ -55,6 +59,7 @@ export const publications: Publication[] = [
     venue: "The First Workshop on System-2 Reasoning at Scale, NeurIPS",
     year: 2024,
     type: "workshop",
+    tags: ["reasoning", "LLM", "evaluation", "ARC", "NeurIPS"],
     links: {},
   },
   {
@@ -65,15 +70,18 @@ export const publications: Publication[] = [
       "Workshop on the Interactions between Analogical Reasoning and Machine Learning (IARML @ IJCAI)",
     year: 2024,
     type: "workshop",
-    award: "equal contribution",
+    equalContribution: true,
+    tags: ["analogical reasoning", "reinforcement learning", "ARC", "IJCAI"],
     links: { arxiv: "https://arxiv.org/abs/2408.14855" },
   },
+  // ── Conference ─────────────────────────────────────────────────────────
   {
     title: "대형 언어 모델을 활용한 퓨샷 추론 문제의 데이터 증강",
     authors: ["W Seo", "W Sim", "S Kim"],
     venue: "한국정보과학회",
     year: 2023,
-    type: "workshop",
+    type: "conference",
+    tags: ["LLM", "data augmentation", "few-shot", "domestic conference"],
     links: {},
   },
   {
@@ -81,7 +89,8 @@ export const publications: Publication[] = [
     authors: ["구교준", "심우창", "임재균", "김세진", "김선동"],
     venue: "한국정보과학회 학술발표논문집:828–830",
     year: 2023,
-    type: "workshop",
+    type: "conference",
+    tags: ["contrastive learning", "reasoning", "ARC", "domestic conference"],
     links: {},
   },
 
@@ -93,16 +102,7 @@ export const publications: Publication[] = [
     venue: "arXiv:2505.20672",
     year: 2025,
     type: "preprint",
-    links: { arxiv: "https://arxiv.org/abs/2505.20672" },
+    tags: ["synthetic data", "analogical reasoning", "ARC", "benchmark"],
+    links: { arxiv: "https://arxiv.org/abs/2505.20672", project: "https://gifarc.vercel.app/" },
   },
-  // TODO — Scholar truncated this entry; verify venue/year/links and uncomment:
-  // {
-  //   title:
-  //     "Exploring Planning Capability of Large Language Model Using Abstraction and Reasoning Corpus Benchmark",
-  //   authors: ["W Sim"],
-  //   venue: "TBD",
-  //   year: 0,
-  //   type: "preprint",
-  //   links: {},
-  // },
 ];
