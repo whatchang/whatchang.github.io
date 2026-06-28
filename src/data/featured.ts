@@ -17,6 +17,7 @@ export const featured: FeaturedItem[] = [
   },
   {
     title: "GIFARC: Synthetic ARC-style Dataset from GIF-derived Analogies",
+    status: "under review",
     description: "Building ARC-style tasks from human analogies extracted from GIFs.",
     thumbnail: "/images/featured/gifarc.png",
     href: "https://gifarc.vercel.app/",
@@ -25,7 +26,7 @@ export const featured: FeaturedItem[] = [
   {
     title:
       "Reasoning Abilities of Large Language Models: In-Depth Analysis on the Abstraction and Reasoning Corpus",
-    status: "ACM TIST 2024 · co-first author",
+    status: "ACM TIST 2024",
     description:
       "In-depth analysis of LLM reasoning on the Abstraction and Reasoning Corpus (ARC) — measuring where the models succeed and where they break down across inferential, abstraction, and recombination capabilities.",
     thumbnail: "/images/featured/lot.png",
