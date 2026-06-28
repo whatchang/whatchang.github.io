@@ -1,0 +1,102 @@
+---
+import {
+  publications,
+  SELF_NAMES,
+  type Publication,
+} from "../data/publications";
+import LinkChip from "./LinkChip.astro";
+
+const typeOrder: Publication["type"][] = [
+  "journal",
+  "conference",
+  "workshop",
+  "preprint",
+];
+
+const typeLabel: Record<Publication["type"], string> = {
+  journal: "Journal",
+  conference: "Conference",
+  workshop: "Workshop",
+  preprint: "Preprint",
+};
+
+const grouped: Record<Publication["type"], Publication[]> = {
+  journal: [],
+  conference: [],
+  workshop: [],
+  preprint: [],
+};
+for (const pub of publications) grouped[pub.type].push(pub);
+
+const visibleGroups = typeOrder.filter((t) => grouped[t].length > 0);
+---
+
+<section id="publications" class="mx-auto max-w-3xl px-6 py-16">
+  <h2
+    class="text-xl font-semibold tracking-tight text-zinc-900 md:text-2xl dark:text-zinc-100"
+  >
+    Publications
+  </h2>
+
+  <div class="mt-6 space-y-10">
+    {
+      visibleGroups.map((type) => (
+        <div>
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+            {typeLabel[type]}
+          </h3>
+          <ul class="mt-4 space-y-6">
+            {grouped[type].map((pub) => (
+              <li class="text-sm leading-relaxed">
+                <p class="text-zinc-700 dark:text-zinc-300">
+                  {pub.authors.map((author, i) => (
+                    <>
+                      {SELF_NAMES.includes(author) ? (
+                        <span class="font-semibold text-zinc-900 dark:text-zinc-100">
+                          {author}
+                        </span>
+                      ) : (
+                        <span>{author}</span>
+                      )}
+                      {i < pub.authors.length - 1 ? ", " : ""}
+                    </>
+                  ))}
+                </p>
+                <p class="mt-1 font-semibold text-zinc-900 dark:text-zinc-100">
+                  {pub.title}
+                </p>
+                <p class="mt-1 italic text-zinc-500 dark:text-zinc-400">
+                  {pub.venue}, {pub.year}
+                </p>
+                {pub.award && (
+                  <p class="mt-2">
+                    <span class="inline-flex items-center rounded-full border border-amber-200 bg-amber-50 px-2 py-0.5 text-[11px] font-medium text-amber-800 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-300">
+                      {pub.award}
+                    </span>
+                  </p>
+                )}
+                {pub.links &&
+                  Object.values(pub.links).some((v) => Boolean(v)) && (
+                    <div class="mt-3 flex flex-wrap gap-2">
+                      {pub.links.pdf && (
+                        <LinkChip label="PDF" href={pub.links.pdf} />
+                      )}
+                      {pub.links.arxiv && (
+                        <LinkChip label="arXiv" href={pub.links.arxiv} />
+                      )}
+                      {pub.links.code && (
+                        <LinkChip label="Code" href={pub.links.code} />
+                      )}
+                      {pub.links.project && (
+                        <LinkChip label="Project" href={pub.links.project} />
+                      )}
+                    </div>
+                  )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>

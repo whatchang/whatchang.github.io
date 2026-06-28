@@ -1,0 +1,137 @@
+---
+import type { profile as Profile } from "../data/profile";
+import { withBase } from "../lib/url";
+
+interface Props {
+  links: typeof Profile.links;
+  email?: string;
+}
+
+const { links, email } = Astro.props;
+
+// Internal links (CV) start with "/" and need the configured base prefix.
+const cvHref = links.cv?.startsWith("/") ? withBase(links.cv) : links.cv;
+
+type IconLink = {
+  href: string;
+  label: string;
+  key: "email" | "scholar" | "github" | "linkedin" | "x" | "cv";
+};
+
+const items: IconLink[] = [];
+if (email) items.push({ href: `mailto:${email}`, label: "Email", key: "email" });
+if (links.scholar)
+  items.push({ href: links.scholar, label: "Google Scholar", key: "scholar" });
+if (links.github) items.push({ href: links.github, label: "GitHub", key: "github" });
+if (links.linkedin)
+  items.push({ href: links.linkedin, label: "LinkedIn", key: "linkedin" });
+if (links.x) items.push({ href: links.x, label: "X (Twitter)", key: "x" });
+if (cvHref) items.push({ href: cvHref, label: "CV", key: "cv" });
+---
+
+<ul class="flex flex-wrap items-center gap-2">
+  {
+    items.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          aria-label={item.label}
+          title={item.label}
+          target={
+            item.key === "email" || item.key === "cv" ? undefined : "_blank"
+          }
+          rel={
+            item.key === "email" || item.key === "cv"
+              ? undefined
+              : "noopener noreferrer"
+          }
+          class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-zinc-200 text-zinc-600 transition hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-600 dark:border-zinc-800 dark:text-zinc-400 dark:hover:border-indigo-700 dark:hover:bg-indigo-950/40 dark:hover:text-indigo-400"
+        >
+          {item.key === "email" && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+          )}
+          {item.key === "scholar" && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M22 10 12 4 2 10l10 6 10-6Z" />
+              <path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5" />
+            </svg>
+          )}
+          {item.key === "github" && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M12 .5C5.73.5.78 5.46.78 11.74c0 4.95 3.21 9.14 7.66 10.62.56.1.77-.24.77-.54v-2c-3.12.68-3.78-1.34-3.78-1.34-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.49-.28-5.11-1.25-5.11-5.57 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .95-.31 3.1 1.16.9-.25 1.86-.38 2.82-.39.96.01 1.92.14 2.82.39 2.15-1.47 3.1-1.16 3.1-1.16.61 1.55.23 2.7.11 2.98.72.79 1.16 1.8 1.16 3.03 0 4.33-2.63 5.28-5.13 5.56.4.35.76 1.04.76 2.1v3.11c0 .3.21.65.78.54 4.45-1.48 7.66-5.67 7.66-10.62C23.22 5.46 18.27.5 12 .5Z" />
+            </svg>
+          )}
+          {item.key === "linkedin" && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43A2.06 2.06 0 1 1 5.34 3.3a2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.72C24 .77 23.2 0 22.22 0Z" />
+            </svg>
+          )}
+          {item.key === "x" && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" />
+            </svg>
+          )}
+          {item.key === "cv" && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="9" y1="13" x2="15" y2="13" />
+              <line x1="9" y1="17" x2="15" y2="17" />
+            </svg>
+          )}
+        </a>
+      </li>
+    ))
+  }
+</ul>

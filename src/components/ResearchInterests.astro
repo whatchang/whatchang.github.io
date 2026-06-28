@@ -1,0 +1,31 @@
+---
+import { interests } from "../data/interests";
+---
+
+<section id="research" class="mx-auto max-w-3xl px-6 py-16">
+  <h2
+    class="text-xl font-semibold tracking-tight text-zinc-900 md:text-2xl dark:text-zinc-100"
+  >
+    Research Interests
+  </h2>
+  <ul class="mt-6 space-y-3">
+    {
+      interests.map((item) => (
+        <li class="flex items-start gap-3 text-zinc-700 dark:text-zinc-300">
+          <span
+            class="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400 dark:bg-zinc-500"
+            aria-hidden="true"
+          />
+          <span class="flex-1 leading-relaxed">
+            {item.text}
+            {item.current && (
+              <span class="ml-2 inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 px-2 py-0.5 text-[11px] font-medium text-indigo-700 dark:border-indigo-800 dark:bg-indigo-950/50 dark:text-indigo-300">
+                Current focus
+              </span>
+            )}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</section>

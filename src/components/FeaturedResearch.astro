@@ -1,0 +1,54 @@
+---
+import { featured } from "../data/featured";
+import LinkChip from "./LinkChip.astro";
+import { withBase } from "../lib/url";
+---
+
+<section id="featured" class="mx-auto max-w-3xl px-6 py-16">
+  <h2
+    class="text-xl font-semibold tracking-tight text-zinc-900 md:text-2xl dark:text-zinc-100"
+  >
+    Featured Research
+  </h2>
+
+  <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {
+      featured.map((item) => (
+        <article class="group overflow-hidden rounded-2xl border border-zinc-200 bg-white transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900/40 dark:hover:shadow-lg dark:hover:shadow-black/20">
+          <div class="aspect-video w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+            <img
+              src={withBase(item.thumbnail)}
+              alt={`${item.title} thumbnail`}
+              loading="lazy"
+              class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+            />
+          </div>
+
+          <div class="space-y-3 p-5">
+            {item.status && (
+              <span class="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 px-2 py-0.5 text-[11px] font-medium text-indigo-700 dark:border-indigo-800 dark:bg-indigo-950/50 dark:text-indigo-300">
+                {item.status}
+              </span>
+            )}
+
+            <h3 class="text-base font-semibold leading-snug text-zinc-900 dark:text-zinc-100">
+              {item.title}
+            </h3>
+
+            <p class="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+              {item.description}
+            </p>
+
+            {item.links.length > 0 && (
+              <div class="flex flex-wrap gap-2 pt-1">
+                {item.links.map((link) => (
+                  <LinkChip label={link.label} href={link.href} />
+                ))}
+              </div>
+            )}
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#g2)"/>
+  <text x="640" y="380" font-family="Inter, system-ui, sans-serif" font-size="80" font-weight="700" fill="#ffffff" text-anchor="middle">GIFARC</text>
+  <text x="640" y="445" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="400" fill="#fce7f3" text-anchor="middle">Synthetic ARC-style dataset from GIF-derived analogies</text>
+</svg>

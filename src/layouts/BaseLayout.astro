@@ -1,0 +1,59 @@
+---
+import "../styles/global.css";
+import { profile } from "../data/profile";
+import { withBase } from "../lib/url";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const aboutFirstSentence =
+  profile.about.split(/(?<=[.!?])\s+/).find(Boolean) ?? profile.about;
+
+const { title = `${profile.nameEn} — ${profile.title}`, description = aboutFirstSentence } =
+  Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href={withBase("/favicon.svg")} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+
+    <!-- Theme init: must run before paint to avoid FOUC -->
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var prefersDark =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var useDark = stored ? stored === "dark" : prefersDark;
+          if (useDark) document.documentElement.classList.add("dark");
+        } catch (_) {}
+      })();
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body
+    class="bg-white text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100"
+  >
+    <slot />
+  </body>
+</html>

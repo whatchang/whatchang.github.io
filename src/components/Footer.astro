@@ -1,0 +1,25 @@
+---
+import { profile } from "../data/profile";
+import SocialIcons from "./SocialIcons.astro";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-zinc-200 py-10 dark:border-zinc-800">
+  <div class="mx-auto flex max-w-3xl flex-col items-center gap-4 px-6 text-sm">
+    {
+      profile.email && (
+        <a
+          href={`mailto:${profile.email}`}
+          class="text-zinc-600 hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
+        >
+          {profile.email}
+        </a>
+      )
+    }
+    <SocialIcons links={profile.links} email={profile.email} />
+    <p class="text-xs text-zinc-500 dark:text-zinc-500">
+      © {year} {profile.nameEn}
+    </p>
+  </div>
+</footer>

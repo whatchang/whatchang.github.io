@@ -1,0 +1,77 @@
+---
+import { profile } from "../data/profile";
+import SocialIcons from "./SocialIcons.astro";
+import { withBase } from "../lib/url";
+---
+
+<section id="top" class="mx-auto max-w-3xl px-6 pt-16 pb-12 md:pt-20">
+  <div class="flex flex-col items-start gap-8 md:flex-row md:items-center">
+    <img
+      src={withBase("/images/profile.jpg")}
+      alt={`${profile.nameEn} portrait`}
+      width="100"
+      height="128"
+      class="w-32 shrink-0 rounded-2xl border border-zinc-200 object-cover shadow-sm md:w-40 dark:border-zinc-800"
+    />
+
+    <div class="min-w-0 flex-1">
+      <h1
+        class="text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl dark:text-zinc-100"
+      >
+        {profile.nameEn}
+        <span
+          class="ml-2 align-middle text-base font-normal text-zinc-500 dark:text-zinc-400"
+        >
+          {profile.nameKo}
+        </span>
+      </h1>
+
+      <p class="mt-2 text-base text-zinc-700 md:text-lg dark:text-zinc-300">
+        {profile.title}
+      </p>
+
+      <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+        {profile.affiliation}
+      </p>
+
+      {
+        profile.advisor.name && (
+          <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+            Advisor:{" "}
+            {profile.advisor.href ? (
+              <a
+                href={profile.advisor.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-indigo-600 hover:underline dark:text-indigo-400"
+              >
+                {profile.advisor.name}
+              </a>
+            ) : (
+              <span class="text-zinc-700 dark:text-zinc-300">
+                {profile.advisor.name}
+              </span>
+            )}
+          </p>
+        )
+      }
+
+      {
+        profile.email && (
+          <p class="mt-1 text-sm">
+            <a
+              href={`mailto:${profile.email}`}
+              class="text-indigo-600 hover:underline dark:text-indigo-400"
+            >
+              {profile.email}
+            </a>
+          </p>
+        )
+      }
+
+      <div class="mt-5">
+        <SocialIcons links={profile.links} email={profile.email} />
+      </div>
+    </div>
+  </div>
+</section>

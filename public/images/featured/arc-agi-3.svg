@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#g1)"/>
+  <text x="640" y="380" font-family="Inter, system-ui, sans-serif" font-size="80" font-weight="700" fill="#ffffff" text-anchor="middle">ARC-AGI-3</text>
+  <text x="640" y="445" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="400" fill="#e0e7ff" text-anchor="middle">Prior-knowledge generalization via BAMDP &amp; Meta-RL</text>
+</svg>
