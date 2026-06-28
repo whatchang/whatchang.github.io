@@ -51,7 +51,7 @@ const visibleGroups = typeOrder.filter((t) => grouped[t].length > 0);
                 <p class="text-zinc-700 dark:text-zinc-300">
                   {pub.authors.map((author, i) => {
                     const isSelf = SELF_NAMES.includes(author);
-                    const showStar = pub.equalContribution && i < 2;
+                    const showStar = pub.equalContribution && i < pub.equalContribution;
                     return (
                       <>
                         {isSelf ? (

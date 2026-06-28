@@ -5,7 +5,7 @@ export type Publication = {
   year: number;
   type: "journal" | "conference" | "workshop" | "preprint";
   award?: string;
-  equalContribution?: boolean;
+  equalContribution?: number;
   tags?: string[];
   links?: { pdf?: string; arxiv?: string; code?: string; project?: string };
   thumbnail?: string;
@@ -37,7 +37,7 @@ export const publications: Publication[] = [
     venue: "ACM Transactions on Intelligent Systems and Technology (TIST)",
     year: 2024,
     type: "journal",
-    equalContribution: true,
+    equalContribution: 3,
     tags: ["reasoning", "LLM", "evaluation", "ARC"],
     links: { project: "https://llm-on-arc.pages.dev/" },
   },
@@ -70,7 +70,7 @@ export const publications: Publication[] = [
       "Workshop on the Interactions between Analogical Reasoning and Machine Learning (IARML @ IJCAI)",
     year: 2024,
     type: "workshop",
-    equalContribution: true,
+    equalContribution: 2,
     tags: ["analogical reasoning", "reinforcement learning", "ARC", "IJCAI"],
     links: { arxiv: "https://arxiv.org/abs/2408.14855" },
   },
