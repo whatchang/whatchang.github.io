@@ -83,13 +83,15 @@ export const publications: Publication[] = [
   },
   // ── Conference ─────────────────────────────────────────────────────────
   {
-    title: "대형 언어 모델을 활용한 퓨샷 추론 문제의 데이터 증강",
+    title: "Augmenting Few-Shot Demonstrations with Large Language Model",
     authors: ["W Seo", "W Sim", "S Kim"],
     venue: "한국정보과학회",
     year: 2023,
     type: "conference",
     tags: ["LLM", "data augmentation", "few-shot", "domestic conference"],
-    links: {},
+    links: {
+      pdf: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11705093&width=1489",
+    },
   },
   {
     title: "Using Contrastive Learning for Abstraction and Reasoning Task",
