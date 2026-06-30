@@ -37,14 +37,8 @@ if (cvHref) items.push({ href: cvHref, label: "CV", key: "cv" });
           href={item.href}
           aria-label={item.label}
           title={item.label}
-          target={
-            item.key === "email" || item.key === "cv" ? undefined : "_blank"
-          }
-          rel={
-            item.key === "email" || item.key === "cv"
-              ? undefined
-              : "noopener noreferrer"
-          }
+          target={item.key === "email" ? undefined : "_blank"}
+          rel={item.key === "email" ? undefined : "noopener noreferrer"}
           class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-zinc-200 text-zinc-600 transition hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-600 dark:border-zinc-800 dark:text-zinc-400 dark:hover:border-indigo-700 dark:hover:bg-indigo-950/40 dark:hover:text-indigo-400"
         >
           {item.key === "email" && (
