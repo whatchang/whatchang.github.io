@@ -35,20 +35,25 @@ export const publications: Publication[] = [
       "S Kim",
     ],
     venue: "ACM Transactions on Intelligent Systems and Technology (TIST)",
-    year: 2024,
+    year: 2025,
     type: "journal",
     equalContribution: 3,
     tags: ["reasoning", "LLM", "evaluation", "ARC"],
-    links: { project: "https://llm-on-arc.pages.dev/" },
+    links: {
+      pdf: "https://dl.acm.org/doi/pdf/10.1145/3712701",
+      project: "https://llm-on-arc.pages.dev/",
+    },
   },
   {
-    title: "ARC 문제 해결을 위한 프롬프트 엔지니어링의 가능성",
+    title: "The Possibility of Prompt Engineering for ARC Problem Solving",
     authors: ["심우창", "진혜빈", "김세진", "김선동"],
     venue: "정보과학회 컴퓨팅의 실제 논문지 30(2):63–69",
     year: 2024,
     type: "journal",
     tags: ["reasoning", "prompt engineering", "ARC", "domestic journal"],
-    links: {},
+    links: {
+      pdf: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11716261",
+    },
   },
 
   // ── Workshop ───────────────────────────────────────────────────────────
@@ -60,7 +65,9 @@ export const publications: Publication[] = [
     year: 2024,
     type: "workshop",
     tags: ["reasoning", "LLM", "evaluation", "ARC", "NeurIPS"],
-    links: {},
+    links: {
+      pdf: "https://openreview.net/pdf?id=getEDedhSV",
+    },
   },
   {
     title:
@@ -85,13 +92,15 @@ export const publications: Publication[] = [
     links: {},
   },
   {
-    title: "추상화 및 추론 문제 해결을 위한 대조학습",
+    title: "Using Contrastive Learning for Abstraction and Reasoning Task",
     authors: ["구교준", "심우창", "임재균", "김세진", "김선동"],
     venue: "한국정보과학회 학술발표논문집:828–830",
     year: 2023,
     type: "conference",
     tags: ["contrastive learning", "reasoning", "ARC", "domestic conference"],
-    links: {},
+    links: {
+      pdf: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11705255",
+    },
   },
 
   // ── Preprint ───────────────────────────────────────────────────────────

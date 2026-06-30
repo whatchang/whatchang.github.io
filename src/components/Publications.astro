@@ -20,6 +20,17 @@ const typeLabel: Record<Publication["type"], string> = {
   preprint: "Preprint",
 };
 
+const typeHeadingClass: Record<Publication["type"], string> = {
+  journal:
+    "border-indigo-500 text-indigo-700 dark:border-indigo-400 dark:text-indigo-300",
+  conference:
+    "border-emerald-500 text-emerald-700 dark:border-emerald-400 dark:text-emerald-300",
+  workshop:
+    "border-amber-500 text-amber-700 dark:border-amber-400 dark:text-amber-300",
+  preprint:
+    "border-zinc-400 text-zinc-600 dark:border-zinc-500 dark:text-zinc-400",
+};
+
 const grouped: Record<Publication["type"], Publication[]> = {
   journal: [],
   conference: [],
@@ -38,14 +49,19 @@ const visibleGroups = typeOrder.filter((t) => grouped[t].length > 0);
     Publications
   </h2>
 
-  <div class="mt-6 space-y-10">
+  <div class="mt-6 space-y-12">
     {
       visibleGroups.map((type) => (
         <div>
-          <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-            {typeLabel[type]}
+          <h3
+            class={`flex items-baseline gap-2 border-l-4 pl-3 text-base font-bold uppercase tracking-wide ${typeHeadingClass[type]}`}
+          >
+            <span>{typeLabel[type]}</span>
+            <span class="text-xs font-normal text-zinc-400 dark:text-zinc-500">
+              · {grouped[type].length}
+            </span>
           </h3>
-          <ul class="mt-4 space-y-6">
+          <ul class="mt-5 space-y-6">
             {grouped[type].map((pub) => (
               <li class="text-base leading-relaxed">
                 <p class="text-zinc-700 dark:text-zinc-300">

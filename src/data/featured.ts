@@ -26,7 +26,7 @@ export const featured: FeaturedItem[] = [
   {
     title:
       "Reasoning Abilities of Large Language Models: In-Depth Analysis on the Abstraction and Reasoning Corpus",
-    status: "ACM TIST 2024",
+    status: "ACM TIST 2025",
     description:
       "In-depth analysis of LLM reasoning on the Abstraction and Reasoning Corpus (ARC) — measuring where the models succeed and where they break down across inferential, abstraction, and recombination capabilities.",
     thumbnail: "/images/featured/lot.png",
