@@ -46,7 +46,7 @@ export const publications: Publication[] = [
   },
   {
     title: "The Possibility of Prompt Engineering for ARC Problem Solving",
-    authors: ["심우창", "진혜빈", "김세진", "김선동"],
+    authors: ["W Sim", "H Jin", "S Kim", "S Kim"],
     venue: "정보과학회 컴퓨팅의 실제 논문지 30(2):63–69",
     year: 2024,
     type: "journal",
@@ -95,7 +95,7 @@ export const publications: Publication[] = [
   },
   {
     title: "Using Contrastive Learning for Abstraction and Reasoning Task",
-    authors: ["구교준", "심우창", "임재균", "김세진", "김선동"],
+    authors: ["G Gu", "W Sim", "J Im", "S Kim", "S Kim"],
     venue: "한국정보과학회 학술발표논문집:828–830",
     year: 2023,
     type: "conference",
