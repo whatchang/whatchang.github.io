@@ -103,11 +103,11 @@ const visibleGroups = typeOrder.filter((t) => grouped[t].length > 0);
                 {pub.links &&
                   Object.values(pub.links).some((v) => Boolean(v)) && (
                     <div class="mt-3 flex flex-wrap gap-2">
-                      {pub.links.pdf && (
-                        <LinkChip label="PDF" href={pub.links.pdf} />
-                      )}
-                      {pub.links.arxiv && (
-                        <LinkChip label="arXiv" href={pub.links.arxiv} />
+                      {(pub.links.pdf || pub.links.arxiv) && (
+                        <LinkChip
+                          label="Paper"
+                          href={pub.links.pdf ?? pub.links.arxiv!}
+                        />
                       )}
                       {pub.links.code && (
                         <LinkChip label="Code" href={pub.links.code} />
