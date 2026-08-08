@@ -1,6 +1,19 @@
-export const interests: { text: string; current?: boolean }[] = [
-  { text: "Abstract reasoning & LLM reasoning (ARC-AGI)" },
-  { text: "Agentic AI and Meta-Reinforcement Learning" },
-  { text: "Analogical & transfer learning — leveraging prior knowledge for unseen tasks" },
-  { text: "Prior-knowledge-driven generalization on ARC-AGI-3 via BAMDP / Meta-RL", current: true },
+export const interests: { text: string; detail?: string; current?: boolean }[] = [
+  { text: "Adaptive agents under uncertainty and distribution shift" },
+  {
+    text: "Bayesian & Meta-Reinforcement Learning",
+    detail: "belief inference, information gathering, and test-time adaptation",
+  },
+  {
+    text: "Probabilistic task & environment modeling",
+    detail: "latent structure, world models, and uncertainty-aware inference",
+  },
+  {
+    text: "Generalization to unseen tasks and environments",
+    detail: "from latent task variation to structural shift",
+  },
+  {
+    text: "Language-model priors for adaptive agents",
+    detail: "leveraging pretrained knowledge for interactive adaptation",
+  },
 ];

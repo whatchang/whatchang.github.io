@@ -12,7 +12,7 @@ export const profile = {
     x: "",                        // TODO (leave empty to hide the icon)
     cv: "/cv.pdf",                // TODO replace file in public/
   },
-  about: `I am a Ph.D. student in AI Convergence at the Gwangju Institute of Science and Technology (GIST), advised by Prof. Sundong Kim in the Data Science Lab. My research aims to bridge the gap between the capabilities of large language models and human-level abstract reasoning, anchored by the ARC-AGI benchmark.
+  about: `I am a Ph.D. student in AI Convergence at the Gwangju Institute of Science and Technology (GIST), advised by Prof. Sundong Kim in the Data Science Lab. My research focuses on adaptive intelligence under uncertainty: how intelligent agents can infer latent task and environment structure, update their beliefs through interaction, and adapt to unseen tasks and environments.
 
-Recently, I have been studying how models can leverage prior knowledge acquired during pretraining to generalize to genuinely unseen tasks. I test these ideas on ARC-AGI-3, where I am an active competition participant, and I am currently exploring methods grounded in Bayes-Adaptive MDPs (BAMDP) and Meta-Reinforcement Learning.`,
+I am particularly interested in probabilistic modeling, Bayesian and meta-reinforcement learning, and world models for belief-based adaptation. Building on my previous work on abstract reasoning and ARC, I currently use ARC-AGI as a testbed for studying increasingly challenging forms of generalization—from uncertainty over task identity and environment parameters to broader structural shifts. I am also exploring how pretrained language models can provide prior knowledge that is refined through interaction.`,
 };

@@ -6,7 +6,7 @@ export const education = [
   },
   {
     institution: "Chosun University",
-    degree: "B.S. in Computer Science",
+    degree: "B.S. in Computer Engineering",
     period: "2016 – 2023",
   },
 ];

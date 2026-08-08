@@ -17,7 +17,8 @@ import { interests } from "../data/interests";
             aria-hidden="true"
           />
           <span class="flex-1 leading-relaxed">
-            {item.text}
+            <span class="font-medium text-zinc-900 dark:text-zinc-100">{item.text}</span>
+            {item.detail && <> — {item.detail}</>}
             {item.current && (
               <span class="ml-2 inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 px-2 py-0.5 text-[11px] font-medium text-indigo-700 dark:border-indigo-800 dark:bg-indigo-950/50 dark:text-indigo-300">
                 Current focus
