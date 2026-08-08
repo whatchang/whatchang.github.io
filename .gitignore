@@ -25,3 +25,7 @@ pnpm-debug.log*
 
 # Claude Code workspace state
 .claude/
+
+# local CV source copy (deployed copy lives at public/cv.pdf)
+/Woochang_CV*.pdf
+*:Zone.Identifier
