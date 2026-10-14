@@ -1,0 +1,173 @@
+% Editable reconstruction of the existing CV PDF, revised on 2026-10-15.
+% This is a new source file, not the recovered original TeX.
+% Original PDF: Woochang_CV.pdf (preserved), SHA-256:
+% df3b6429d030cc74fc616445ba3db5fedf01ae32294d91eac7c50a7334d27cb6
+% Completed-work facts, dates, skills, and metrics come from that PDF.
+% Current-work scope comes from the Harness and Jev/Kev chats and their
+% project records; no unpublished performance gains are claimed here.
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=14mm]{geometry}
+\usepackage{enumitem,titlesec,microtype,xcolor}
+\usepackage{hyperref}
+\definecolor{linkblue}{HTML}{17467D}
+\hypersetup{colorlinks=true,urlcolor=linkblue,linkcolor=linkblue,
+  pdftitle={Woochang Sim - Research CV},pdfauthor={Woochang Sim},
+  pdfsubject={LLM reasoning evaluation, agent harnesses, and self-monitoring}}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\urlstyle{same}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlength{\emergencystretch}{2em}
+\titleformat{\section}{\large\scshape}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=12pt,label=\textendash,
+  itemsep=1pt,topsep=2pt,parsep=0pt,partopsep=0pt}
+\newcommand{\entry}[3]{\textbf{#1}\hfill\textit{#2}\\\textit{#3}\par}
+\newcommand{\pub}[2]{\noindent #1\\{\small #2}\par\vspace{2pt}}
+
+\begin{document}
+\begin{center}
+  {\LARGE\bfseries Woochang Sim}\\[3pt]
+  Ph.D. Student in AI Convergence, GIST Data Science Lab\\[3pt]
+  \href{https://whatchang.github.io/}{whatchang.github.io}
+  \enspace|\enspace\href{mailto:woochang@gm.gist.ac.kr}{woochang@gm.gist.ac.kr}\\[2pt]
+  {\small\href{https://github.com/whatchang}{github.com/whatchang}
+  \enspace|\enspace\href{https://www.linkedin.com/in/woo-chang-sim-b739a8143/}{linkedin.com/in/woo-chang-sim-b739a8143}}
+\end{center}
+\vspace{-5pt}
+
+\section{Research Profile}
+Ph.D. researcher with published work in \textbf{controlled LLM reasoning evaluation}
+and experience developing \textbf{executable synthetic benchmarks}.
+My current research studies diagnostics for automated LLM-agent harness improvement
+and learned internal readouts for model judgment and self-monitoring.
+I connect these questions through algorithm implementation, controlled experiments,
+and analysis of model behavior; adaptive use of computation is a further research goal.
+
+{\small\textbf{Broader interests:} Adaptive agents under uncertainty and distribution shift;
+probabilistic task and environment modeling; Bayesian and meta-reinforcement learning;
+generalization to unseen tasks and environments; language-model priors and world models
+for interactive adaptation.}
+
+\section{Education}
+\textbf{Ph.D. in AI Convergence}, Gwangju Institute of Science and Technology\hfill 2025--Present\\
+Advisor: Prof. Sundong Kim\par
+\textbf{M.S. in Artificial Intelligence}, Gwangju Institute of Science and Technology\hfill 2023--2025\\
+Advisor: Prof. Sundong Kim\par
+\textbf{B.S. in Computer Engineering}, Chosun University\hfill 2016--2023
+
+\section{Research Experience}
+\entry{Harness Diagnostics for Interactive LLM Agents}{2026--Present}{Ongoing Ph.D. research; ARC-AGI-3 testbed}
+\begin{itemize}
+  \item Developed and piloted diagnostic tooling that exposes solver token probabilities
+  and traces recorded context-production paths to support automated harness edits.
+  \item Designed controlled comparisons that separate diagnostic judgments from executed
+  behavioral outcomes and keep development tasks separate from final evaluation tasks.
+  \item Analyzed recurring agent failures and incomplete provenance mappings;
+  tool use and repair effects remain under pilot evaluation.
+\end{itemize}
+
+\entry{Internal Readouts for Model Judgment and Self-Monitoring}{2026--Present}{Ongoing Ph.D. research}
+\begin{itemize}
+  \item Investigating learned readouts from unused output coordinates for model judgment
+  while preserving language-generation ability.
+  \item Studying whether these signals can track reasoning progress and inform self-checking
+  and future compute allocation; signal validity, intervention effects, and allocation
+  benefits are separate research questions.
+\end{itemize}
+
+\entry{Controlled Evaluation of LLM Reasoning on ARC}{Nov 2023--Jan 2025}{Co-first author, ACM Transactions on Intelligent Systems and Technology (TIST)}
+\begin{itemize}
+  \item Operationalized a Language of Thought framework into reproducible experiments
+  on \textbf{logical coherence, compositionality, and productivity}.
+  \item Led implementation of controlled reasoning experiments, including prompting-based
+  evaluations, an action-based compositionality environment, and an interface for human baselines.
+  \item Compared language models with human performance and analyzed gaps between
+  task accuracy and valid abstract and compositional reasoning.
+\end{itemize}
+
+\entry{GIFARC: Synthetic Analogy-Based ARC Tasks}{Apr 2025--Present}{arXiv preprint; \href{https://gifarc.vercel.app/}{project}}
+\begin{itemize}
+  \item Developed a \textbf{three-stage VLM/LLM generation pipeline} that converts GIF-derived
+  analogies into visual abstractions, task sketches, and executable ARC-style task instances.
+  \item Evaluated analogical information through controlled \textbf{in-context learning and
+  supervised fine-tuning} experiments, including downstream ARC benchmarks.
+  \item Coordinated experimental planning, task allocation, and weekly research
+  discussions across collaborators.
+\end{itemize}
+
+\newpage
+\section{Publications}
+{\small $*$ denotes equal contribution.\par}
+\pub{\textbf{Reasoning Abilities of Large Language Models: In-Depth Analysis on the Abstraction and Reasoning Corpus}}
+{S. Lee$^*$, \textbf{W. Sim}$^*$, D. Shin$^*$, W. Seo, J. Park, S. Lee, S. Hwang, S. Kim, S. Kim.\\
+ACM TIST, 2025. \href{https://doi.org/10.1145/3712701}{doi:10.1145/3712701};
+\href{https://github.com/GIST-DSLab/ARC_Prompt}{code}.}
+
+\pub{\textbf{GIFARC: Synthetic Dataset for Leveraging Human-Intuitive Analogies to Elevate AI Reasoning}}
+{\textbf{W. Sim}$^*$, H. Ryu$^*$, K. Choi$^*$, S. Han, S. Kim.\\
+arXiv preprint, 2025. \href{https://arxiv.org/abs/2505.20672}{arXiv:2505.20672}.}
+
+\pub{\textbf{Reasoning Abilities of Large Language Models through the Lens of Abstraction and Reasoning}}
+{S. Lee, \textbf{W. Sim}, D. Shin, S. Kim, S. Kim.\\
+NeurIPS System-2 Reasoning at Scale \textbf{Workshop}, 2024.
+\href{https://openreview.net/forum?id=getEDedhSV}{paper}.}
+
+\pub{\textbf{Enhancing Analogical Reasoning in the Abstraction and Reasoning Corpus via Model-Based RL}}
+{J. Lee$^*$, \textbf{W. Sim}$^*$, S. Kim, S. Kim.\\
+IJCAI IARML \textbf{Workshop}, 2024. \href{https://arxiv.org/abs/2408.14855}{arXiv:2408.14855}.}
+
+\pub{\textbf{The Possibility of Prompt Engineering for ARC Problem Solving}}
+{\textbf{W. Sim}, H. Jin, S. Kim, S. Kim.\\
+Journal of KIISE: Computing Practices and Letters, 30(2):63--69, 2024.
+\href{https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11716261}{paper}.}
+
+\pub{\textbf{Using Contrastive Learning for Abstraction and Reasoning Task}}
+{G. Gu, \textbf{W. Sim}, J. Im, S. Kim, S. Kim.\\
+Korea Software Congress, pp. 828--830, 2023.
+\href{https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11705255}{paper}.}
+
+\pub{\textbf{Augmenting Few-Shot Demonstrations with Large Language Model}}
+{W. Seo, \textbf{W. Sim}, S. Kim.\\
+Korea Software Congress, pp. 341--343, 2023.
+\href{https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11705093}{paper}.}
+
+\section{Technical Skills}
+\textbf{Programming:} Python.\\
+\textbf{Frameworks and tools:} PyTorch, Hugging Face Transformers, Weights \& Biases, Git.\\
+\textbf{Research methods:} Experimental design, benchmark construction, ablation studies,
+statistical evaluation, human evaluation, inter-annotator agreement analysis.\\
+\textbf{ML experience:} LLM fine-tuning, in-context learning, synthetic data generation,
+information retrieval, open-domain question answering, data pipelines.\\
+\textbf{Languages:} Korean (native), English (intermediate).
+
+\section{Selected Projects}
+\textbf{Open-Domain Question Answering System}
+\href{https://github.com/whatchang/mrc-level2-nlp-04}{[code]}\hfill Oct--Nov 2021\\
+Implemented a hybrid BM25/Elasticsearch/DPR retrieval pipeline and a RoBERTa-large
+reader over 60K Wikipedia documents; achieved \textbf{68.89 EM / 78.69 F1},
+ranking 6th among 19 teams.\par
+\textbf{Relation Extraction with Typed Entity Markers}
+\href{https://github.com/whatchang/klue-level2-nlp-04}{[code]}\hfill Sep--Oct 2021\\
+Implemented typed entity markers and domain-adaptive masked-language-model
+pretraining with RoBERTa-large; achieved \textbf{72.6 F1}.\par
+\textbf{K-pop Relation Extraction Dataset Construction}\hfill Nov 2021\\
+Constructed a 2,468-instance dataset across 10 relation classes and developed
+iterative annotation guidelines; achieved Fleiss' $\kappa = 0.842$.
+
+\section{Teaching and Service}
+\textbf{Teaching Assistant, Machine Learning \& Deep Learning, GIST}\hfill Sep--Dec 2025\\
+Graded machine-learning assignments with detailed feedback and taught fundamental
+neural-network, convolutional-network, and recurrent-network concepts.\par
+\textbf{Student Representative, AI Convergence Department, GIST}\hfill Jan--Dec 2025\\
+Organized student events and facilitated communication between students and faculty.
+
+\section{Awards}
+The Chungshim Fellowship\hfill Mar 2024\\
+Best Presentation Award, Korea Computer Congress 2023\hfill Jul 2023
+\end{document}

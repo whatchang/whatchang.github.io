@@ -29,3 +29,7 @@ pnpm-debug.log*
 # local CV source copy (deployed copy lives at public/cv.pdf)
 /Woochang_CV*.pdf
 *:Zone.Identifier
+
+# Local CV build artifacts and verification snapshots
+/work/amazon-alignment-2026-10-15/
+/work/cv-build/

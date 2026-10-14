@@ -1,8 +1,13 @@
 export const interests: { text: string; detail?: string; current?: boolean }[] = [
+  {
+    text: "LLM agent harnesses and self-monitoring",
+    detail: "solver diagnostics, context tracing, and internal signals for adaptive computation",
+    current: true,
+  },
   { text: "Adaptive agents under uncertainty and distribution shift" },
   {
     text: "Bayesian & Meta-Reinforcement Learning",
-    detail: "belief inference, information gathering, and test-time adaptation",
+    detail: "longer-term interests in belief inference, information gathering, and test-time adaptation",
   },
   {
     text: "Probabilistic task & environment modeling",
@@ -14,6 +19,6 @@ export const interests: { text: string; detail?: string; current?: boolean }[] =
   },
   {
     text: "Language-model priors for adaptive agents",
-    detail: "leveraging pretrained knowledge for interactive adaptation",
+    detail: "prior knowledge for interactive reasoning and adaptation",
   },
 ];

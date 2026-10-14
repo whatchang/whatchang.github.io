@@ -10,9 +10,13 @@ export const profile = {
     github: "https://github.com/whatchang",
     linkedin: "https://www.linkedin.com/in/woo-chang-sim-b739a8143/",
     x: "",                        // TODO (leave empty to hide the icon)
-    cv: "/cv.pdf",                // TODO replace file in public/
+    cv: "/cv.pdf",                // Built from cv/woochang-sim.tex
   },
-  about: `I am a Ph.D. student in AI Convergence at the Gwangju Institute of Science and Technology (GIST), advised by Prof. Sundong Kim in the Data Science Lab. My research focuses on adaptive intelligence under uncertainty: how intelligent agents can infer latent task and environment structure, update their beliefs through interaction, and adapt to unseen tasks and environments.
+  about: `I am a Ph.D. student in AI Convergence at the Gwangju Institute of Science and Technology (GIST), advised by Prof. Sundong Kim in the Data Science Lab. I study how language-model agents can reason, adapt, and make effective use of computation.
 
-I am particularly interested in probabilistic modeling, Bayesian and meta-reinforcement learning, and world models for belief-based adaptation. Building on my previous work on abstract reasoning and ARC, I currently use ARC-AGI as a testbed for studying increasingly challenging forms of generalization—from uncertainty over task identity and environment parameters to broader structural shifts. I am also exploring how pretrained language models can provide prior knowledge that is refined through interaction.`,
+My current work follows two directions: diagnostic tools for automated improvement of agent harnesses, and learned internal signals for self-monitoring and computation control. In the harness work, I use ARC-AGI-3 to study how solver token probabilities and the recorded origins of model context can help locate and assess harness edits. In the model-level work, I investigate whether learned readouts from unused output coordinates can support judgment and self-monitoring while preserving language-generation ability, with adaptive compute allocation as a further research goal.
+
+My previous work includes controlled evaluation of LLM reasoning and synthetic benchmark construction. For our ACM TIST study, I implemented reasoning experiments and human baselines; for GIFARC, I developed a pipeline that turns GIF-derived analogies into executable ARC-style tasks and evaluated them through in-context learning and supervised fine-tuning experiments.
+
+My broader interests remain adaptive agents under uncertainty, probabilistic task and environment modeling, Bayesian and meta-reinforcement learning, and generalization to unseen tasks and environments. I am also interested in how pretrained language-model knowledge and world models can support interactive adaptation.`,
 };

@@ -7,6 +7,6 @@
     </linearGradient>
   </defs>
   <rect width="1280" height="720" fill="url(#g1)"/>
-  <text x="640" y="380" font-family="Inter, system-ui, sans-serif" font-size="80" font-weight="700" fill="#ffffff" text-anchor="middle">ARC-AGI-3</text>
-  <text x="640" y="445" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="400" fill="#e0e7ff" text-anchor="middle">Prior-knowledge generalization via BAMDP &amp; Meta-RL</text>
+  <text x="640" y="380" font-family="Inter, system-ui, sans-serif" font-size="80" font-weight="700" fill="#ffffff" text-anchor="middle">LLM Agents</text>
+  <text x="640" y="445" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="400" fill="#e0e7ff" text-anchor="middle">Agent Harness Diagnostics &amp; Self-Monitoring</text>
 </svg>
