@@ -1,10 +1,12 @@
+import type { ResearchLink } from "./research-link";
+
 export type Publication = {
   title: string;
   authors: string[];
   venue: string;
   year: number;
   equalContribution?: number;
-  links: { label: string; href: string }[];
+  links: ResearchLink[];
 };
 
 // Author-name variants that Publications.astro emphasizes as the site owner.
@@ -24,8 +26,9 @@ export const publications: Publication[] = [
     venue: "Under review at ACL Rolling Review (ARR)",
     year: 2026,
     links: [
-      { label: "Project", href: "https://gifarc.vercel.app/" },
+      { kind: "Project", href: "https://gifarc.vercel.app/" },
       {
+        kind: "Paper",
         label: "Earlier preprint (2025)",
         href: "https://arxiv.org/abs/2505.20672",
       },
@@ -49,10 +52,9 @@ export const publications: Publication[] = [
     year: 2025,
     equalContribution: 3,
     links: [
-      { label: "Paper", href: "https://doi.org/10.1145/3712701" },
-      { label: "PDF", href: "https://dl.acm.org/doi/pdf/10.1145/3712701" },
-      { label: "Code", href: "https://github.com/GIST-DSLab/ARC_Prompt" },
-      { label: "Project", href: "https://llm-on-arc.pages.dev/" },
+      { kind: "Paper", href: "https://doi.org/10.1145/3712701" },
+      { kind: "Code", href: "https://github.com/GIST-DSLab/ARC_Prompt" },
+      { kind: "Project", href: "https://llm-on-arc.pages.dev/" },
     ],
   },
   {
@@ -67,7 +69,7 @@ export const publications: Publication[] = [
     ],
     venue: "NeurIPS Workshop on System-2 Reasoning at Scale",
     year: 2024,
-    links: [{ label: "Paper", href: "https://openreview.net/pdf?id=getEDedhSV" }],
+    links: [{ kind: "Paper", href: "https://openreview.net/pdf?id=getEDedhSV" }],
   },
   {
     title:
@@ -77,7 +79,7 @@ export const publications: Publication[] = [
       "IJCAI Workshop on the Interactions between Analogical Reasoning and Machine Learning (IARML)",
     year: 2024,
     equalContribution: 2,
-    links: [{ label: "Paper", href: "https://arxiv.org/abs/2408.14855" }],
+    links: [{ kind: "Paper", href: "https://arxiv.org/abs/2408.14855" }],
   },
   {
     title: "The Possibility of Prompt Engineering for ARC Problem Solving",
@@ -86,7 +88,7 @@ export const publications: Publication[] = [
     year: 2024,
     links: [
       {
-        label: "Paper",
+        kind: "Paper",
         href: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11716261",
       },
     ],
@@ -98,7 +100,7 @@ export const publications: Publication[] = [
     year: 2023,
     links: [
       {
-        label: "Paper",
+        kind: "Paper",
         href: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11705093&width=1489",
       },
     ],
@@ -116,7 +118,7 @@ export const publications: Publication[] = [
     year: 2023,
     links: [
       {
-        label: "Paper",
+        kind: "Paper",
         href: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11705255",
       },
     ],

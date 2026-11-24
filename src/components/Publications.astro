@@ -1,5 +1,6 @@
 ---
 import { publications, SELF_NAMES } from "../data/publications";
+import { orderedResearchLinks } from "../data/research-link";
 import LinkChip from "./LinkChip.astro";
 
 const years = [...new Set(publications.map((pub) => pub.year))].sort(
@@ -48,8 +49,8 @@ const years = [...new Set(publications.map((pub) => pub.year))].sort(
                   {pub.venue}
                 </p>
                 <div class="mt-3 flex flex-wrap gap-2">
-                  {pub.links.map((link) => (
-                    <LinkChip label={link.label} href={link.href} />
+                  {orderedResearchLinks(pub.links).map((link) => (
+                    <LinkChip {...link} />
                   ))}
                 </div>
               </li>
