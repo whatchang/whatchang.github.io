@@ -10,7 +10,7 @@ export const profile = {
     github: "https://github.com/whatchang",
     linkedin: "https://www.linkedin.com/in/woo-chang-sim-b739a8143/",
     x: "",                        // TODO (leave empty to hide the icon)
-    cv: "/cv.pdf?v=ce89633d",
+    cv: "/cv.pdf?v=e2c53acf",
   },
   about: `I study how language models make decisions during generation and how the information an agent sees shapes its next action.
 
