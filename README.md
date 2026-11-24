@@ -45,16 +45,14 @@ The publications renderer bolds any author whose name matches an entry in `SELF_
 
 ## CV source
 
-`cv/woochang-sim.tex` is the editable source for `public/cv.pdf`. It was reconstructed from the existing two-page CV PDF because the original TeX source was not found locally. The original local PDF, `Woochang_CV.pdf`, is preserved and remains ignored by Git.
+The homepage serves the one-page Google Software Engineering PhD Intern 2027 CV at `/cv.pdf`. To update it, copy the approved `pdf/google-swe-phd-2027.pdf` from the Overleaf-linked CV repository to `public/cv.pdf`. Set the `v` query parameter in `src/data/profile.ts` to the first eight characters of the PDF's SHA-256 digest so visitors get the new version.
 
-Compile with an existing TeX Live installation, keeping temporary files out of `public/`:
+`cv/woochang-sim.tex` contains the two-page general research CV. To build a local copy, run the following commands with TeX Live installed.
 
 ```bash
 mkdir -p work/cv-build
 pdflatex -interaction=nonstopmode -halt-on-error -no-shell-escape -output-directory=work/cv-build cv/woochang-sim.tex
 pdflatex -interaction=nonstopmode -halt-on-error -no-shell-escape -output-directory=work/cv-build cv/woochang-sim.tex
-cp work/cv-build/woochang-sim.pdf public/cv.pdf
-npm run build
 ```
 
 When using Windows TeX Live from WSL, invoke `pdflatex.exe` with absolute input and output paths converted by `wslpath -m`. Backslash UNC paths are interpreted as TeX commands. Check the compiled PDF's page count, text, and links before replacing the public copy.
@@ -65,7 +63,7 @@ Files under `public/` are served at the site root:
 
 - `public/images/profile.jpg` — current photo pulled from Google Scholar (100×128). Replace with a higher-resolution headshot if desired.
 - `public/images/featured/arc-agi-3.svg`, `gifarc.svg`, `lot.svg` — placeholder 16:9 thumbnails. Replace with real images (1280×720 recommended). The `lot.svg` file is still referenced from the TIST card; rename if you swap it out.
-- `public/cv.pdf` — drop in your real CV. The CV link in `src/data/profile.ts` (`links.cv`) defaults to `/cv.pdf`.
+- `public/cv.pdf` — downloadable CV linked from `src/data/profile.ts`.
 - `public/favicon.svg` — Astro-default placeholder.
 
 ## Deployment (GitHub Pages)
