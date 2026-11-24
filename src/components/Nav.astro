@@ -1,14 +1,16 @@
 ---
+import { education } from "../data/education";
+import { news } from "../data/news";
 import ThemeToggle from "./ThemeToggle.astro";
 import { profile } from "../data/profile";
 
 const sections = [
   { id: "about", label: "About" },
-  { id: "education", label: "Education" },
-  { id: "research", label: "Research" },
-  { id: "featured", label: "Featured" },
+  { id: "featured", label: "Projects" },
+  { id: "research", label: "Interests" },
   { id: "publications", label: "Publications" },
-  { id: "news", label: "News" },
+  ...(education.length ? [{ id: "education", label: "Education" }] : []),
+  ...(news.length ? [{ id: "news", label: "News" }] : []),
 ];
 ---
 
@@ -24,7 +26,7 @@ const sections = [
     </a>
 
     <div class="flex items-center gap-1 sm:gap-2">
-      <ul class="hidden items-center gap-1 text-sm sm:flex">
+      <ul class="hidden items-center gap-1 text-sm md:flex">
         {
           sections.map((s) => (
             <li>
@@ -41,8 +43,9 @@ const sections = [
       <ThemeToggle />
       <button
         id="menu-toggle"
-        class="inline-flex items-center justify-center rounded-md p-1.5 text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-900 sm:hidden dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-100"
+        class="inline-flex items-center justify-center rounded-md p-1.5 text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-900 md:hidden dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-100"
         aria-label="Toggle menu"
+        aria-controls="mobile-menu"
         aria-expanded="false"
       >
         <svg id="menu-icon-open" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -57,7 +60,7 @@ const sections = [
 
   <div
     id="mobile-menu"
-    class="hidden border-t border-zinc-200 bg-white/95 backdrop-blur sm:hidden dark:border-zinc-800 dark:bg-zinc-950/95"
+    class="hidden border-t border-zinc-200 bg-white/95 backdrop-blur md:hidden dark:border-zinc-800 dark:bg-zinc-950/95"
   >
     <ul class="mx-auto max-w-3xl space-y-1 px-6 py-3">
       {

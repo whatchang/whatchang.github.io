@@ -3,117 +3,122 @@ export type Publication = {
   authors: string[];
   venue: string;
   year: number;
-  type: "journal" | "conference" | "workshop" | "preprint";
-  award?: string;
   equalContribution?: number;
-  tags?: string[];
-  links?: { pdf?: string; arxiv?: string; code?: string; project?: string };
-  thumbnail?: string;
+  links: { label: string; href: string }[];
 };
 
-// All author-string variants that refer to the site owner.
-// Publications.astro bolds any author whose name appears in this list.
+// Author-name variants that Publications.astro emphasizes as the site owner.
 export const SELF_NAMES: string[] = ["Woochang Sim", "W Sim", "심우창"];
 
-// Pulled from Google Scholar:
-// https://scholar.google.com/citations?user=vBmLpIUAAAAJ&hl=en
-// Add `links.pdf`, `links.arxiv`, `links.code`, `links.project` where you have them.
+// Newest first. Keep the source's author order and mark the first N equal contributors.
 export const publications: Publication[] = [
-  // ── Journal ────────────────────────────────────────────────────────────
+  {
+    title: "GIFARC: A GIF-Derived Resource for Analogy-Guided Task Framing",
+    authors: [
+      "Woochang Sim",
+      "Hyunseok Ryu",
+      "Kyungmin Choi",
+      "Sungwon Han",
+      "Sundong Kim",
+    ],
+    venue: "Under review at ACL Rolling Review (ARR)",
+    year: 2026,
+    links: [
+      { label: "Project", href: "https://gifarc.vercel.app/" },
+      {
+        label: "Earlier preprint (2025)",
+        href: "https://arxiv.org/abs/2505.20672",
+      },
+    ],
+  },
   {
     title:
       "Reasoning Abilities of Large Language Models: In-Depth Analysis on the Abstraction and Reasoning Corpus",
     authors: [
-      "S Lee",
-      "W Sim",
-      "D Shin",
-      "W Seo",
-      "J Park",
-      "S Lee",
-      "S Hwang",
-      "S Kim",
-      "S Kim",
+      "Seungpil Lee",
+      "Woochang Sim",
+      "Donghyeon Shin",
+      "Wongyu Seo",
+      "Jiwon Park",
+      "Seokki Lee",
+      "Sanha Hwang",
+      "Sejin Kim",
+      "Sundong Kim",
     ],
     venue: "ACM Transactions on Intelligent Systems and Technology (TIST)",
     year: 2025,
-    type: "journal",
     equalContribution: 3,
-    tags: ["reasoning", "LLM", "evaluation", "ARC"],
-    links: {
-      pdf: "https://dl.acm.org/doi/pdf/10.1145/3712701",
-      project: "https://llm-on-arc.pages.dev/",
-    },
+    links: [
+      { label: "Paper", href: "https://doi.org/10.1145/3712701" },
+      { label: "PDF", href: "https://dl.acm.org/doi/pdf/10.1145/3712701" },
+      { label: "Code", href: "https://github.com/GIST-DSLab/ARC_Prompt" },
+      { label: "Project", href: "https://llm-on-arc.pages.dev/" },
+    ],
   },
-  {
-    title: "The Possibility of Prompt Engineering for ARC Problem Solving",
-    authors: ["W Sim", "H Jin", "S Kim", "S Kim"],
-    venue: "정보과학회 컴퓨팅의 실제 논문지 30(2):63–69",
-    year: 2024,
-    type: "journal",
-    tags: ["reasoning", "prompt engineering", "ARC", "domestic journal"],
-    links: {
-      pdf: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11716261",
-    },
-  },
-
-  // ── Workshop ───────────────────────────────────────────────────────────
   {
     title:
       "Reasoning Abilities of Large Language Models through the Lens of Abstraction and Reasoning",
-    authors: ["S Lee", "W Sim", "D Shin", "S Kim", "S Kim"],
-    venue: "The First Workshop on System-2 Reasoning at Scale, NeurIPS",
+    authors: [
+      "Seungpil Lee",
+      "Woochang Sim",
+      "Donghyeon Shin",
+      "Sejin Kim",
+      "Sundong Kim",
+    ],
+    venue: "NeurIPS Workshop on System-2 Reasoning at Scale",
     year: 2024,
-    type: "workshop",
-    tags: ["reasoning", "LLM", "evaluation", "ARC", "NeurIPS"],
-    links: {
-      pdf: "https://openreview.net/pdf?id=getEDedhSV",
-    },
+    links: [{ label: "Paper", href: "https://openreview.net/pdf?id=getEDedhSV" }],
   },
   {
     title:
-      "Enhancing Analogical Reasoning in the Abstraction and Reasoning Corpus via Model-Based Reinforcement Learning",
-    authors: ["J Lee", "W Sim", "S Kim", "S Kim"],
+      "Enhancing Analogical Reasoning in the Abstraction and Reasoning Corpus via Model-Based RL",
+    authors: ["Jihwan Lee", "Woochang Sim", "Sejin Kim", "Sundong Kim"],
     venue:
-      "Workshop on the Interactions between Analogical Reasoning and Machine Learning (IARML @ IJCAI)",
+      "IJCAI Workshop on the Interactions between Analogical Reasoning and Machine Learning (IARML)",
     year: 2024,
-    type: "workshop",
     equalContribution: 2,
-    tags: ["analogical reasoning", "reinforcement learning", "ARC", "IJCAI"],
-    links: { arxiv: "https://arxiv.org/abs/2408.14855" },
+    links: [{ label: "Paper", href: "https://arxiv.org/abs/2408.14855" }],
   },
-  // ── Conference ─────────────────────────────────────────────────────────
+  {
+    title: "The Possibility of Prompt Engineering for ARC Problem Solving",
+    authors: ["Woochang Sim", "Hyebin Jin", "Sejin Kim", "Sundong Kim"],
+    venue: "KIISE Transactions on Computing Practices, 30(2), 63–69",
+    year: 2024,
+    links: [
+      {
+        label: "Paper",
+        href: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11716261",
+      },
+    ],
+  },
   {
     title: "Augmenting Few-Shot Demonstrations with Large Language Model",
-    authors: ["W Seo", "W Sim", "S Kim"],
-    venue: "한국정보과학회",
+    authors: ["Wongyu Seo", "Woochang Sim", "Sundong Kim"],
+    venue: "Korea Software Congress (KSC), 341–343",
     year: 2023,
-    type: "conference",
-    tags: ["LLM", "data augmentation", "few-shot", "domestic conference"],
-    links: {
-      pdf: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11705093&width=1489",
-    },
+    links: [
+      {
+        label: "Paper",
+        href: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11705093&width=1489",
+      },
+    ],
   },
   {
     title: "Using Contrastive Learning for Abstraction and Reasoning Task",
-    authors: ["G Gu", "W Sim", "J Im", "S Kim", "S Kim"],
-    venue: "한국정보과학회 학술발표논문집:828–830",
+    authors: [
+      "Gyojoon Gu",
+      "Woochang Sim",
+      "Jaegyun Im",
+      "Sejin Kim",
+      "Sundong Kim",
+    ],
+    venue: "Korea Software Congress (KSC), 828–830",
     year: 2023,
-    type: "conference",
-    tags: ["contrastive learning", "reasoning", "ARC", "domestic conference"],
-    links: {
-      pdf: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11705255",
-    },
-  },
-
-  // ── Preprint ───────────────────────────────────────────────────────────
-  {
-    title:
-      "GIFARC: Synthetic Dataset for Leveraging Human-Intuitive Analogies to Elevate AI Reasoning",
-    authors: ["W Sim", "H Ryu", "K Choi", "S Han", "S Kim"],
-    venue: "arXiv:2505.20672",
-    year: 2025,
-    type: "preprint",
-    tags: ["synthetic data", "analogical reasoning", "ARC", "benchmark"],
-    links: { arxiv: "https://arxiv.org/abs/2505.20672", project: "https://gifarc.vercel.app/" },
+    links: [
+      {
+        label: "Paper",
+        href: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11705255",
+      },
+    ],
   },
 ];

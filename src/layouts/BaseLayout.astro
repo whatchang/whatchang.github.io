@@ -8,10 +8,7 @@ interface Props {
   description?: string;
 }
 
-const aboutFirstSentence =
-  profile.about.split(/(?<=[.!?])\s+/).find(Boolean) ?? profile.about;
-
-const { title = `${profile.nameEn} — ${profile.title}`, description = aboutFirstSentence } =
+const { title = `${profile.nameEn} — ${profile.title}`, description = profile.about.split("\n\n")[0] } =
   Astro.props;
 ---
 
@@ -48,7 +45,7 @@ const { title = `${profile.nameEn} — ${profile.title}`, description = aboutFir
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Spectral:wght@500&amp;display=swap"
     />
   </head>
   <body

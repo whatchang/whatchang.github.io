@@ -1,37 +1,42 @@
 export type FeaturedItem = {
   title: string;
-  status?: string;
+  status: string;
   description: string;
-  thumbnail: string;
-  href?: string;
-  links: { label: string; href: string }[];
+  figure?: { src: string; alt: string };
+  links?: { label: string; href: string }[];
 };
 
 export const featured: FeaturedItem[] = [
   {
-    title:
-      "Reasoning Abilities of Large Language Models: In-Depth Analysis on the Abstraction and Reasoning Corpus",
-    status: "ACM TIST 2025",
+    title: "Decision Modeling with Unused Logits in Language Models",
+    status: "Ongoing research",
     description:
-      "Controlled experiments on logical coherence, compositionality, and productivity, including an action-based environment and human baselines, to evaluate the capabilities and limitations of LLM reasoning.",
-    thumbnail: "/images/featured/lot.png",
-    href: "https://llm-on-arc.pages.dev/",
-    links: [{ label: "Paper", href: "https://dl.acm.org/doi/10.1145/3712701" }],
+      "I train a language model to score answer choices using normally unused entries in its output layer. I tested answer selection across 12 language understanding tasks. In a separate experiment, I use human ratings from PRM800K to train a model to flag individual math steps for review.",
   },
   {
-    title: "GIFARC: Synthetic ARC-style Dataset from GIF-derived Analogies",
-    status: "arXiv preprint",
-    description: "A VLM/LLM pipeline that converts GIF-derived analogies into executable ARC-style tasks, evaluated through controlled in-context learning and supervised fine-tuning experiments.",
-    thumbnail: "/images/featured/gifarc.png",
-    href: "https://gifarc.vercel.app/",
-    links: [{ label: "Paper", href: "https://arxiv.org/abs/2505.20672" }],
+    title: "Harness Diagnostics for Interactive LLM Agents",
+    status: "Ongoing research",
+    description:
+      "Which instructions and tool results did an agent see before it acted? I trace what entered the model’s context and inspect the probabilities it assigned to candidate tokens. I piloted these tools on ARC-AGI-3 to study how changes to the agent’s harness affect its behavior.",
   },
   {
-    title: "LLM Agent Harnesses and Self-Monitoring",
-    status: "ongoing research",
+    title: "GIFARC: A GIF-Derived Resource for Analogy-Guided Task Framing",
+    status: "First author · Under review at ACL Rolling Review",
     description:
-      "Studying solver diagnostics and context-production tracing for automated harness improvement in ARC-AGI-3, alongside learned internal signals for model judgment, self-monitoring, and future compute allocation.",
-    thumbnail: "/images/featured/arc-agi-3.svg",
-    links: [],
+      "I developed a pipeline that turns patterns in animated GIFs into executable grid puzzles. GIFARC contains 1,614 ARC-style tasks that we used to study how analogy cues affect model reasoning.",
+    figure: { src: "/images/featured/gifarc.png", alt: "A GIF-derived analogy is used to generate an ARC grid puzzle and its solution program." },
+    links: [{ label: "Project", href: "https://gifarc.vercel.app/" }],
+  },
+  {
+    title: "Reasoning Abilities of Large Language Models: In-Depth Analysis on the Abstraction and Reasoning Corpus",
+    status: "Co-first author · ACM TIST, 2025",
+    description:
+      "Can a model solve a grid puzzle and still reason inconsistently about it? I led the implementation of controlled prompting experiments and an action-based ARC environment, including an interface for measuring human performance on the same tasks.",
+    figure: { src: "/images/featured/lot.png", alt: "Grid examples for the study’s tests of logical coherence, compositionality, and productivity." },
+    links: [
+      { label: "Paper", href: "https://doi.org/10.1145/3712701" },
+      { label: "Code", href: "https://github.com/GIST-DSLab/ARC_Prompt" },
+      { label: "Project", href: "https://llm-on-arc.pages.dev/" },
+    ],
   },
 ];
