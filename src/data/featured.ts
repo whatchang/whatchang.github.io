@@ -14,9 +14,9 @@ export const featured: FeaturedItem[] = [
     title: "Decision Modeling with Unused Logits in Language Models",
     status: "Ongoing research",
     goal:
-      "Can a language model use the same output layer that predicts its next token to choose an answer or judge whether the math step it just wrote needs review?",
+      "Can a language model decide whether to revisit a math step or start a new line in the same pass that predicts its next token? How does learning to make these decisions affect ordinary text generation?",
     contribution:
-      "I trained a model to score answer choices using normally unused rows in its output layer and evaluated it on 12 language understanding tasks. For math reasoning, I used human ratings from PRM800K to train a separate model to flag individual steps for review.",
+      "I proposed scoring each choice in a task’s “decision vocabulary” with an otherwise unused logit in the same pass that predicts the next token. My tests covered 12 answer-selection tasks, math-step review, and constrained writing.",
   },
   {
     title: "Harness Diagnostics for Interactive LLM Agents",
@@ -24,7 +24,7 @@ export const featured: FeaturedItem[] = [
     goal:
       "When an agent fails, can the system that edits its prompts and tools use the model’s own signals to locate the problem and choose a repair?",
     contribution:
-      "I built tracing tools and piloted them on ARC-AGI-3. The traces show which instructions and tool results an agent saw before each action and what probabilities it assigned to possible next tokens.",
+      "I designed two diagnostics for failures that recur after a harness edit. The harness optimizer can vary part of the agent’s input to see how its token probabilities change, then trace that passage back to the prompt or code it can revise.",
   },
   {
     title: "GIFARC: A GIF-Derived Resource for Analogy-Guided Task Framing",
@@ -32,7 +32,7 @@ export const featured: FeaturedItem[] = [
     goal:
       "How does an analogy from an everyday scene change the way a model describes a grid puzzle’s rule, and does that analogy help it solve the puzzle?",
     contribution:
-      "I built a pipeline that turned patterns in animated GIFs into 1,614 grid puzzles, then tested whether analogy cues helped models explain and solve those puzzles.",
+      "I designed the three-stage process for turning GIFs into grid puzzles, coordinated the team’s experimental plan, and tested analogy cues in prompting and fine-tuning experiments.",
     figure: { src: "/images/featured/gifarc.png", alt: "A GIF-derived analogy is used to generate an ARC grid puzzle and its solution program." },
     links: [{ kind: "Project", href: "https://gifarc.vercel.app/" }],
   },
