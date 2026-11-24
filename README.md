@@ -1,6 +1,6 @@
 # Woochang Sim — Personal Research Homepage
 
-A static, single-page personal research homepage for Woochang Sim (심우창), Ph.D. student in AI Convergence at the Gwangju Institute of Science and Technology (GIST), Data Science Lab. Built for academic recruiters, collaborators, and paper readers.
+A static, single-page personal research homepage for Woochang Sim (심우창), Ph.D. student in the Department of AI at the Gwangju Institute of Science and Technology (GIST), Data Science Lab. Built for academic recruiters, collaborators, and paper readers.
 
 ## Stack
 

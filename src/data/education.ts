@@ -1,7 +1,7 @@
 export const education = [
   {
     institution: "Gwangju Institute of Science and Technology (GIST)",
-    degree: "Ph.D. in AI Convergence",
+    degree: "Ph.D. in AI",
     period: "2025 – Present",
   },
   {

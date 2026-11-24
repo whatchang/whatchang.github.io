@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Static single-page personal research homepage for Woochang Sim (Ph.D. student, AI Convergence, GIST Data Science Lab), deployed to GitHub Pages at https://whatchang.github.io via `.github/workflows/deploy.yml`. Stack: Astro 7, Tailwind CSS v4 (through `@tailwindcss/vite`, no tailwind config file), strict TypeScript.
+Static single-page personal research homepage for Woochang Sim (Ph.D. student, Department of AI, GIST Data Science Lab), deployed to GitHub Pages at https://whatchang.github.io via `.github/workflows/deploy.yml`. Stack: Astro 7, Tailwind CSS v4 (through `@tailwindcss/vite`, no tailwind config file), strict TypeScript.
 
 ## Commands
 
